@@ -12,8 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class Formb
  */
-@WebServlet("/b")
-public class Formb extends HttpServlet {
+@WebServlet("/bd")
+public class Sevlet1 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 
@@ -22,9 +22,7 @@ public class Formb extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-
-		request.getRequestDispatcher("/WEB-INF/Jsp1.jsp")
-	  	.forward(request, response);
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
@@ -39,17 +37,13 @@ public class Formb extends HttpServlet {
 		int antwoord = 0;
 		int g1 = Integer.parseInt(getall1);
 		int g2 = Integer.parseInt(getall2);
-		if (midden.equals("+")){
-			antwoord = g1 + g2;
-		} else if (midden.equals("-")){
-			
-		}
-
-		  
-//		response.getWriter().append("<!DOCTYPE html><html><head>"+
-//				"<title>Say what??</title>"+ 
-//				"</head><body><h1>Het is "+ antwoord +" </h1>"+
-//				"</body></html>");
+		if (midden.equals("+"))antwoord = g1 + g2;
+		else if (midden.equals("-"));
+		
+		response.getWriter().append("<!DOCTYPE html><html><head>"+
+				"<title>Say what??</title>"+ 
+				"</head><body><h1>Het is "+ antwoord +" </h1>"+
+				"</body></html>");
 	}
 
 }
